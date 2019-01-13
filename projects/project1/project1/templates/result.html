@@ -1,0 +1,24 @@
+{% extends "layout_main.html" %}
+
+{% block title %}
+	Search Result
+{% endblock %}
+
+{% block heading %}
+	Search Result
+{% endblock %}
+
+{% block body %}
+	<div>
+		Click ISBN to view the book<br>
+		<form action="{{ url_for('bookpage') }}", method="post">
+			<ul>
+			    {% for book in result %}
+			        <li><b>ISBN</b> <input type="submit" name="isbn" value="{{ book.isbn }}"> <b>Title</b> {{ book.title }} <b>Author</b> {{ book.author }}</li>
+			    {% else %}
+			        <li>No result found.</li>
+			    {% endfor %}
+			</ul>
+        </form>
+	</div>
+{% endblock %}

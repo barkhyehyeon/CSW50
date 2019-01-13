@@ -1,0 +1,35 @@
+{% extends "layout_main.html" %}
+
+{% block title %}
+	Search Result
+{% endblock %}
+
+{% block heading %}
+	Search Result
+{% endblock %}
+
+{% block body %}
+	<div>
+		<b>ISBN</b> {{ book.isbn }} <b>Title</b> {{ book.title }} <b>Author</b> {{ book.author }} <b>Publication Year</b> {{ book.author}}
+		<b>Number of ratings</b> {{ count }} <b>Average rating</b> {{ average }}
+	</div>
+	<div>
+	    {% for review in reviews %}
+        	<b>Rating</b> {{ review.rating }}
+        	<p>
+        		{{ review.description }}
+        	</p>
+	    {% else %}
+	        No reviews found.
+	    {% endfor %}
+	</div>
+	<div>
+		{{ message }}
+		<form action="{{ url_for('reviewed') }}", method="post">
+			Rating(1-5) <input type="text" name="rating">
+			<br>
+			Description <input type="text" name="description">
+			<input type="submit" name="submit">
+		</form>
+	</div>
+{% endblock %}

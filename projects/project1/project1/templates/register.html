@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+	Resgister
+{% endblock %}
+
+{% block heading %}
+	Resgister
+{% endblock %}
+
+{% block body %}
+	<div>
+		<form action="{{ url_for('registered') }}" method="post">
+			username : <input type="text" name="username">
+			<br>
+			password : <input type="password" name="password">
+			<input type="submit" name="submit">
+		</form>
+	</div>
+
+	<div>
+		{{message}}
+	</div>
+
+	<a href="{{ url_for('login') }}">login</a>
+{% endblock %}
