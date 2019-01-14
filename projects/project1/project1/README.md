@@ -4,4 +4,4 @@
 https://docs.cs50.net/web/2018/x/projects/1/project1.html
 
 * Screen Shot Example
-![](example.png)
+![](example.PNG)
