@@ -4,8 +4,12 @@
 	<title>BookReview : {% block title %}{% endblock %}</title>
 </head>
 <body>
-	<h1>{% block heading %}{% endblock %}</h1>
-	<a href="{{ url_for('logout') }}">log out</a>
+	<h1>BookReview</h1>
+	<h2>{% block heading %}{% endblock %}</h2>
+	&#9786;<a href="{{ url_for('logout') }}">Log out</a>
+	&#9787;<a href="{{ url_for('search') }}">Search books</a>
+	<br>
+	<br>
 	{% block body %}
 	{% endblock %}
 </body>

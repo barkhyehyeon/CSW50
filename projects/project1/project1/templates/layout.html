@@ -1,10 +1,16 @@
 <!DOCTYPE html>
+<!-- layout for login, register page -->
 <html>
 <head>
 	<title>BookReview : {% block title %}{% endblock %}</title>
 </head>
 <body>
-	<h1>{% block heading %}{% endblock %}</h1>
+	<h1>BookReview</h1>
+	<h2>{% block heading %}{% endblock %}</h2>
+	<div>
+		{{message}}
+	</div>
+	<br>
 	{% block body %}
 	{% endblock %}
 </body>

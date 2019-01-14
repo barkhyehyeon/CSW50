@@ -10,7 +10,7 @@
 
 {% block body %}
 	<div>
-		Click ISBN to view the book<br>
+		Click ISBN to view details of the book<br>
 		<form action="{{ url_for('bookpage') }}", method="post">
 			<ul>
 			    {% for book in result %}

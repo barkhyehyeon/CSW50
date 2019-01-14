@@ -13,9 +13,10 @@
 		<b>ISBN</b> {{ book.isbn }} <b>Title</b> {{ book.title }} <b>Author</b> {{ book.author }} <b>Publication Year</b> {{ book.author}}
 		<b>Number of ratings</b> {{ count }} <b>Average rating</b> {{ average }}
 	</div>
+	<br>
 	<div>
 	    {% for review in reviews %}
-        	<b>Rating</b> {{ review.rating }}
+        	&#9733; {{ review.rating }}
         	<p>
         		{{ review.description }}
         	</p>
@@ -23,8 +24,10 @@
 	        No reviews found.
 	    {% endfor %}
 	</div>
+	<br>
 	<div>
 		{{ message }}
+		<br>
 		<form action="{{ url_for('reviewed') }}", method="post">
 			Rating(1-5) <input type="text" name="rating">
 			<br>
