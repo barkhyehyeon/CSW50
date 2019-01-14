@@ -127,7 +127,13 @@ def reviewed():
 
 	###
 	userid = session.get("userid")
-	rating = float(request.form.get("rating"))
+	rating = request.form.get("rating")
+	try:
+		rating = float(rating)
+	except:
+		return render_template("bookpage.html", book=book, count=count, average=average, reviews=reviews, message="Rating should be a number in the range of 1-5")
+	if rating > 5 or rating < 1:
+		return render_template("bookpage.html", book=book, count=count, average=average, reviews=reviews, message="Rating should be a number in the range of 1-5")
 	description = request.form.get("description")
 	review = db.execute("SELECT * FROM reviews where isbn = :isbn and userid = :userid", {"isbn":isbn, "userid":userid})
 	if review.rowcount != 0:
